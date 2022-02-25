@@ -15,23 +15,22 @@ const client = new MongoClient(databaseURL);
 client.connect().then((client) => {
   const db = client.db();
   //------------------- code here -------------------//
-  db.collection("genres")
-    .insertMany(genres)
+  db.collection("directors")
+    .insertMany(directors)
     .then(() => client.close());
 
   // .then(() => client.close());
 });
 
 //
-// eslint-disable-next-line no-sparse-arrays
-const genres = [
-  { type: "Comedy" },
-  { type: "Fantasy" },
-  { type: "Crime" },
-  { type: "Drama" },
-  { type: "Music" },
-  { type: "Adventure" },
-  { type: "history" },
-  { type: "Thriller" },
-  { type: "Animation" },
+const directors = [
+  { firstName: "Tim", lastName: "Burton" },
+  { firstName: "Francis Ford", lastName: "Coppola" },
+  { firstName: "Frank", lastName: "Darabont" },
+  { firstName: "Peter", lastName: "Faiman" },
+  { firstName: "Bryan", lastName: "Singer" },
+  { firstName: "Brad", lastName: "Bird" },
+  { firstName: "Fernando", lastName: "Meirelles" },
+  { firstName: "Christopher", lastName: "Nolan" },
+  { firstName: "Olivier", lastName: "Nakache" },
 ];
